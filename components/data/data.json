@@ -1,0 +1,797 @@
+{
+    "Product": [
+        {
+            "PRODUCT_ID": "100",
+            "PRODUCT": "Pfizer-BioNTech Ointment 5g"
+        },
+        {
+            "PRODUCT_ID": "200",
+            "PRODUCT": "Moderna 400ug x 10"
+        },
+        {
+            "PRODUCT_ID": "300",
+            "PRODUCT": "Janssen 100 mg x 10"
+        },
+        {
+            "PRODUCT_ID": "400",
+            "PRODUCT": "Sputnik 100 mg x 10"
+        },
+        {
+            "PRODUCT_ID": "500",
+            "PRODUCT": "Oxford-AstraZeneca 200 mg x 5"
+        }
+    ],
+    "Customer": [
+        {
+            "CUSTOMER_ID": "17180611",
+            "CUSTOMER_TYPE": "Department",
+            "NAME": "Dept of General Medicine"
+        },
+        {
+            "CUSTOMER_ID": "17170602",
+            "CUSTOMER_TYPE": "Department",
+            "NAME": "Dept of Gastroenterology"
+        },
+        {
+            "CUSTOMER_ID": "17192845",
+            "CUSTOMER_TYPE": "Department",
+            "NAME": "Dept of Cardiology"
+        },
+        {
+            "CUSTOMER_ID": "17258836",
+            "CUSTOMER_TYPE": "Department",
+            "NAME": "General Day Surgery"
+        },
+        {
+            "CUSTOMER_ID": "17234572",
+            "CUSTOMER_TYPE": "Department",
+            "NAME": "Dept of Pain Management"
+        },
+        {
+            "CUSTOMER_ID": "17244124",
+            "CUSTOMER_TYPE": "Department",
+            "NAME": "Dept of Gastroenterology & Hepatology"
+        },
+        {
+            "CUSTOMER_ID": "17078113",
+            "CUSTOMER_TYPE": "Hospital",
+            "NAME": "St Vincent's Hospital Melbourne"
+        },
+        {
+            "CUSTOMER_ID": "17112216",
+            "CUSTOMER_TYPE": "Hospital",
+            "NAME": "Royal North Shore Hospital"
+        },
+        {
+            "CUSTOMER_ID": "17078101",
+            "CUSTOMER_TYPE": "Hospital",
+            "NAME": "Mater Misericordiae Hospital"
+        },
+        {
+            "CUSTOMER_ID": "17112164",
+            "CUSTOMER_TYPE": "Hospital",
+            "NAME": "The Northern Hospital"
+        },
+        {
+            "CUSTOMER_ID": "17079941",
+            "CUSTOMER_TYPE": "Hospital",
+            "NAME": "North Shore Private Hospital"
+        },
+        {
+            "CUSTOMER_ID": "17111848",
+            "CUSTOMER_TYPE": "Hospital",
+            "NAME": "Gold Coast University Hospital"
+        },
+        {
+            "CUSTOMER_ID": "17484794",
+            "CUSTOMER_TYPE": "Medical Professional",
+            "TITLE": "Doctor",
+            "NAME": "Wan",
+            "FIRST_NAME": "Aston",
+            "MIDDLE_NAME": "Yiu Leung",
+            "ADDRESS_ID": "17038989",
+            "ADDRESS_TYPE": "PHYSICAL",
+            "LINE_1_ADDRESS": "25 Rocklands Road",
+            "CITY": "WOLLSTONECRAFT",
+            "STATE": "NSW",
+            "POSTAL_AREA": "2065",
+            "BRICK": "20650",
+            "PRIMARY_ADDRESS": "Yes"
+        },
+        {
+            "CUSTOMER_ID": "17484794",
+            "CUSTOMER_TYPE": "Medical Professional",
+            "TITLE": "Doctor",
+            "NAME": "Wan",
+            "FIRST_NAME": "Aston",
+            "MIDDLE_NAME": "Yiu Leung",
+            "ADDRESS_ID": "17063248",
+            "ADDRESS_TYPE": "PHYSICAL",
+            "LINE_1_ADDRESS": "Suite 1 Level 5",
+            "LINE_2_ADDRESS": "3 Westbourne Street",
+            "CITY": "ST LEONARDS",
+            "STATE": "NSW",
+            "POSTAL_AREA": "2065",
+            "BRICK": "20651",
+            "PRIMARY_ADDRESS": "No"
+        },
+        {
+            "CUSTOMER_ID": "17484794",
+            "CUSTOMER_TYPE": "Medical Professional",
+            "TITLE": "Doctor",
+            "NAME": "Wan",
+            "FIRST_NAME": "Aston",
+            "MIDDLE_NAME": "Yiu Leung",
+            "ADDRESS_ID": "17077064",
+            "ADDRESS_TYPE": "PHYSICAL",
+            "LINE_1_ADDRESS": "Suite 2",
+            "LINE_2_ADDRESS": "20 Smith Street",
+            "CITY": "CHARLESTOWN",
+            "STATE": "NSW",
+            "POSTAL_AREA": "2290",
+            "BRICK": "22900",
+            "PRIMARY_ADDRESS": "No"
+        },
+        {
+            "CUSTOMER_ID": "17498390",
+            "CUSTOMER_TYPE": "Medical Professional",
+            "TITLE": "Professor",
+            "NAME": "Sharpe",
+            "FIRST_NAME": "Ross",
+            "MIDDLE_NAME": "Colin",
+            "ADDRESS_ID": "17038995",
+            "ADDRESS_TYPE": "PHYSICAL",
+            "LINE_1_ADDRESS": "41 Victoria Parade",
+            "CITY": "FITZROY",
+            "STATE": "VIC",
+            "POSTAL_AREA": "3065",
+            "BRICK": "30650",
+            "PRIMARY_ADDRESS": "Yes"
+        },
+        {
+            "CUSTOMER_ID": "17498390",
+            "CUSTOMER_TYPE": "Medical Professional",
+            "TITLE": "Professor",
+            "NAME": "Sharpe",
+            "FIRST_NAME": "Ross",
+            "MIDDLE_NAME": "Colin",
+            "ADDRESS_ID": "60000001350011",
+            "ADDRESS_TYPE": "PHYSICAL",
+            "LINE_1_ADDRESS": "1 Hospital Boulevard",
+            "CITY": "SOUTHPORT",
+            "STATE": "QLD",
+            "POSTAL_AREA": "4215",
+            "BRICK": "42151",
+            "PRIMARY_ADDRESS": "No"
+        },
+        {
+            "CUSTOMER_ID": "17498390",
+            "CUSTOMER_TYPE": "Medical Professional",
+            "TITLE": "Professor",
+            "NAME": "Sharpe",
+            "FIRST_NAME": "Ross",
+            "MIDDLE_NAME": "Colin",
+            "ADDRESS_ID": "60000012933873",
+            "ADDRESS_TYPE": "PHYSICAL",
+            "LINE_1_ADDRESS": "Suite 18",
+            "LINE_2_ADDRESS": "8 Catherine Street",
+            "CITY": "WOOLLOONGABBA",
+            "STATE": "QLD",
+            "POSTAL_AREA": "4102",
+            "BRICK": "41020",
+            "PRIMARY_ADDRESS": "No"
+        },
+        {
+            "CUSTOMER_ID": "17511298",
+            "CUSTOMER_TYPE": "Medical Professional",
+            "TITLE": "Professor",
+            "NAME": "Howes",
+            "FIRST_NAME": "Laurence",
+            "MIDDLE_NAME": "Guy",
+            "ADDRESS_ID": "17039489",
+            "ADDRESS_TYPE": "PHYSICAL",
+            "LINE_1_ADDRESS": "3 Westbourne Street",
+            "CITY": "ST LEONARDS",
+            "STATE": "NSW",
+            "POSTAL_AREA": "2065",
+            "BRICK": "20651",
+            "PRIMARY_ADDRESS": "Yes"
+        },
+        {
+            "CUSTOMER_ID": "17325218",
+            "CUSTOMER_TYPE": "Medical Professional",
+            "TITLE": "Doctor",
+            "NAME": "Bassily",
+            "FIRST_NAME": "Raouf",
+            "ADDRESS_ID": "17039741",
+            "ADDRESS_TYPE": "PHYSICAL",
+            "LINE_1_ADDRESS": "Cnr Plenty Rd & Kingsbury Drive",
+            "CITY": "BUNDOORA",
+            "STATE": "VIC",
+            "POSTAL_AREA": "3083",
+            "BRICK": "30830",
+            "PRIMARY_ADDRESS": "Yes"
+        },
+        {
+            "CUSTOMER_ID": "17588254",
+            "CUSTOMER_TYPE": "Medical Professional",
+            "TITLE": "Doctor",
+            "NAME": "Sandanayake",
+            "FIRST_NAME": "Neomal",
+            "MIDDLE_NAME": "Sudheera",
+            "ADDRESS_ID": "17039763",
+            "ADDRESS_TYPE": "PHYSICAL",
+            "LINE_1_ADDRESS": "Clinical Science 1",
+            "LINE_2_ADDRESS": "Parklands Drive",
+            "CITY": "SOUTHPORT",
+            "STATE": "QLD",
+            "POSTAL_AREA": "4215",
+            "BRICK": "42151",
+            "PRIMARY_ADDRESS": "Yes"
+        },
+        {
+            "CUSTOMER_ID": "17482154",
+            "CUSTOMER_TYPE": "Medical Professional",
+            "TITLE": "Doctor",
+            "NAME": "Burr",
+            "FIRST_NAME": "Peter",
+            "MIDDLE_NAME": "Kenneth",
+            "ADDRESS_ID": "17039799",
+            "ADDRESS_TYPE": "PHYSICAL",
+            "LINE_1_ADDRESS": "2431 Gold Coast Highway",
+            "CITY": "MERMAID BEACH",
+            "STATE": "QLD",
+            "POSTAL_AREA": "4218",
+            "BRICK": "42180",
+            "PRIMARY_ADDRESS": "Yes"
+        },
+        {
+            "CUSTOMER_ID": "60000101718849",
+            "CUSTOMER_TYPE": "Medical Professional",
+            "TITLE": "Doctor",
+            "NAME": "Moorhouse",
+            "FIRST_NAME": "Melissa",
+            "ADDRESS_ID": "17039818",
+            "ADDRESS_TYPE": "PHYSICAL",
+            "LINE_1_ADDRESS": "Shop 16",
+            "LINE_2_ADDRESS": "Cnr Kellicar Rd & Tindall Street",
+            "CITY": "CAMPBELLTOWN",
+            "STATE": "NSW",
+            "POSTAL_AREA": "2560",
+            "BRICK": "25600",
+            "PRIMARY_ADDRESS": "Yes"
+        },
+        {
+            "CUSTOMER_ID": "17612206",
+            "CUSTOMER_TYPE": "Medical Professional",
+            "TITLE": "Doctor",
+            "NAME": "Allmond",
+            "FIRST_NAME": "Rebecca",
+            "MIDDLE_NAME": "Kaye",
+            "ADDRESS_ID": "17039834",
+            "ADDRESS_TYPE": "PHYSICAL",
+            "LINE_1_ADDRESS": "41 Old North Road",
+            "CITY": "CLARE",
+            "STATE": "SA",
+            "POSTAL_AREA": "5453",
+            "BRICK": "54530",
+            "PRIMARY_ADDRESS": "Yes"
+        },
+        {
+            "CUSTOMER_ID": "17332002",
+            "CUSTOMER_TYPE": "Medical Professional",
+            "TITLE": "Doctor",
+            "NAME": "Davey",
+            "FIRST_NAME": "Katherine",
+            "MIDDLE_NAME": "Virginia",
+            "ADDRESS_ID": "17039950",
+            "ADDRESS_TYPE": "PHYSICAL",
+            "LINE_1_ADDRESS": "2 Kable Street",
+            "CITY": "WINDSOR",
+            "STATE": "NSW",
+            "POSTAL_AREA": "2756",
+            "BRICK": "27560",
+            "PRIMARY_ADDRESS": "Yes"
+        },
+        {
+            "CUSTOMER_ID": "17364426",
+            "CUSTOMER_TYPE": "Medical Professional",
+            "TITLE": "Doctor",
+            "NAME": "Davis",
+            "FIRST_NAME": "Michael",
+            "ADDRESS_ID": "17039952",
+            "ADDRESS_TYPE": "PHYSICAL",
+            "LINE_1_ADDRESS": "70 Ovens Street",
+            "CITY": "WANGARATTA",
+            "STATE": "VIC",
+            "POSTAL_AREA": "3677",
+            "BRICK": "36770",
+            "PRIMARY_ADDRESS": "Yes"
+        },
+        {
+            "CUSTOMER_ID": "17326322",
+            "CUSTOMER_TYPE": "Medical Professional",
+            "TITLE": "Doctor",
+            "NAME": "Somes",
+            "FIRST_NAME": "Neale",
+            "MIDDLE_NAME": "Patrick",
+            "ADDRESS_ID": "17040639",
+            "ADDRESS_TYPE": "PHYSICAL",
+            "LINE_1_ADDRESS": "57-59 Gorden Street",
+            "CITY": "GARBUTT",
+            "STATE": "QLD",
+            "POSTAL_AREA": "4814",
+            "BRICK": "48140",
+            "PRIMARY_ADDRESS": "Yes"
+        },
+        {
+            "CUSTOMER_ID": "17321986",
+            "CUSTOMER_TYPE": "Medical Professional",
+            "TITLE": "Doctor",
+            "NAME": "Hossain",
+            "FIRST_NAME": "Md Tozammel",
+            "ADDRESS_ID": "17041276",
+            "ADDRESS_TYPE": "PHYSICAL",
+            "LINE_1_ADDRESS": "38 Denistone Road",
+            "CITY": "EASTWOOD",
+            "STATE": "NSW",
+            "POSTAL_AREA": "2122",
+            "BRICK": "21221",
+            "PRIMARY_ADDRESS": "Yes"
+        },
+        {
+            "CUSTOMER_ID": "17323338",
+            "CUSTOMER_TYPE": "Medical Professional",
+            "TITLE": "Doctor",
+            "NAME": "Mechreky",
+            "FIRST_NAME": "Hosny",
+            "ADDRESS_ID": "17044830",
+            "ADDRESS_TYPE": "PHYSICAL",
+            "LINE_1_ADDRESS": "230 Lutwyche Road",
+            "CITY": "WINDSOR",
+            "STATE": "QLD",
+            "POSTAL_AREA": "4030",
+            "BRICK": "40310",
+            "PRIMARY_ADDRESS": "Yes"
+        },
+        {
+            "CUSTOMER_ID": "17388650",
+            "CUSTOMER_TYPE": "Medical Professional",
+            "TITLE": "Doctor",
+            "NAME": "Psevdos",
+            "FIRST_NAME": "Chrisoula",
+            "ADDRESS_ID": "17047428",
+            "ADDRESS_TYPE": "PHYSICAL",
+            "LINE_1_ADDRESS": "1202-1210 Old Port Road",
+            "CITY": "ROYAL PARK",
+            "STATE": "SA",
+            "POSTAL_AREA": "5014",
+            "BRICK": "50130",
+            "PRIMARY_ADDRESS": "Yes"
+        },
+        {
+            "CUSTOMER_ID": "17442642",
+            "CUSTOMER_TYPE": "Medical Professional",
+            "TITLE": "Doctor",
+            "NAME": "Apel",
+            "FIRST_NAME": "Andrew",
+            "MIDDLE_NAME": "John",
+            "ADDRESS_ID": "17047496",
+            "ADDRESS_TYPE": "PHYSICAL",
+            "LINE_1_ADDRESS": "Suite 101A Level 1",
+            "LINE_2_ADDRESS": "183-193 Oxford Street",
+            "CITY": "BONDI JUNCTION",
+            "STATE": "NSW",
+            "POSTAL_AREA": "2022",
+            "BRICK": "20220",
+            "PRIMARY_ADDRESS": "Yes"
+        },
+        {
+            "CUSTOMER_ID": "17322254",
+            "CUSTOMER_TYPE": "Medical Professional",
+            "TITLE": "Doctor",
+            "NAME": "Roughan",
+            "FIRST_NAME": "Alison",
+            "MIDDLE_NAME": "Jeanne",
+            "ADDRESS_ID": "17047768",
+            "ADDRESS_TYPE": "PHYSICAL",
+            "LINE_1_ADDRESS": "185 Cooper Street",
+            "CITY": "EPPING",
+            "STATE": "VIC",
+            "POSTAL_AREA": "3076",
+            "BRICK": "30760",
+            "PRIMARY_ADDRESS": "Yes"
+        },
+        {
+            "CUSTOMER_ID": "17594422",
+            "CUSTOMER_TYPE": "Medical Professional",
+            "TITLE": "Doctor",
+            "NAME": "Baylis",
+            "FIRST_NAME": "Corina",
+            "MIDDLE_NAME": "Louise",
+            "ADDRESS_ID": "17048822",
+            "ADDRESS_TYPE": "PHYSICAL",
+            "LINE_1_ADDRESS": "119 Plenty Road",
+            "CITY": "BUNDOORA",
+            "STATE": "VIC",
+            "POSTAL_AREA": "3083",
+            "BRICK": "30830",
+            "PRIMARY_ADDRESS": "Yes"
+        },
+        {
+            "CUSTOMER_ID": "17326170",
+            "CUSTOMER_TYPE": "Medical Professional",
+            "TITLE": "Doctor",
+            "NAME": "Voon",
+            "FIRST_NAME": "Timothy",
+            "MIDDLE_NAME": "Mark Tsei ming",
+            "ADDRESS_ID": "17050582",
+            "ADDRESS_TYPE": "PHYSICAL",
+            "LINE_1_ADDRESS": "147 Montacute Road",
+            "CITY": "NEWTON",
+            "STATE": "SA",
+            "POSTAL_AREA": "5074",
+            "BRICK": "50740",
+            "PRIMARY_ADDRESS": "Yes"
+        },
+        {
+            "CUSTOMER_ID": "17628410",
+            "CUSTOMER_TYPE": "Medical Professional",
+            "TITLE": "Doctor",
+            "NAME": "Gerald",
+            "FIRST_NAME": "Jude",
+            "ADDRESS_ID": "17050724",
+            "ADDRESS_TYPE": "PHYSICAL",
+            "LINE_1_ADDRESS": "209 Pacific Highway",
+            "CITY": "ST LEONARDS",
+            "STATE": "NSW",
+            "POSTAL_AREA": "2065",
+            "BRICK": "20651",
+            "PRIMARY_ADDRESS": "Yes"
+        },
+        {
+            "CUSTOMER_ID": "17354430",
+            "CUSTOMER_TYPE": "Medical Professional",
+            "TITLE": "Doctor",
+            "NAME": "Mack",
+            "FIRST_NAME": "Fiona",
+            "MIDDLE_NAME": "Elaine",
+            "ADDRESS_ID": "17054617",
+            "ADDRESS_TYPE": "PHYSICAL",
+            "LINE_1_ADDRESS": "61 Main Street",
+            "CITY": "ALSTONVILLE",
+            "STATE": "NSW",
+            "POSTAL_AREA": "2477",
+            "BRICK": "24770",
+            "PRIMARY_ADDRESS": "Yes"
+        },
+        {
+            "CUSTOMER_ID": "17326542",
+            "CUSTOMER_TYPE": "Medical Professional",
+            "TITLE": "Doctor",
+            "NAME": "Menz",
+            "FIRST_NAME": "Robert",
+            "MIDDLE_NAME": "John",
+            "ADDRESS_ID": "17055237",
+            "ADDRESS_TYPE": "PHYSICAL",
+            "LINE_1_ADDRESS": "176 Blair Street",
+            "CITY": "BROADMEADOWS",
+            "STATE": "VIC",
+            "POSTAL_AREA": "3047",
+            "BRICK": "30470",
+            "PRIMARY_ADDRESS": "Yes"
+        },
+        {
+            "CUSTOMER_ID": "17481094",
+            "CUSTOMER_TYPE": "Medical Professional",
+            "TITLE": "Doctor",
+            "NAME": "McLennan",
+            "FIRST_NAME": "James",
+            "ADDRESS_ID": "17058491",
+            "ADDRESS_TYPE": "PHYSICAL",
+            "LINE_1_ADDRESS": "8 Campbell Street",
+            "CITY": "BOWEN HILLS",
+            "STATE": "QLD",
+            "POSTAL_AREA": "4006",
+            "BRICK": "40060",
+            "PRIMARY_ADDRESS": "Yes"
+        },
+        {
+            "CUSTOMER_ID": "60000153192350",
+            "CUSTOMER_TYPE": "Pharmacy",
+            "NAME": "Barwon Pharmacy Group"
+        },
+        {
+            "CUSTOMER_ID": "60000153192342",
+            "CUSTOMER_TYPE": "Pharmacy",
+            "NAME": "Chemist Warehouse Rosny"
+        },
+        {
+            "CUSTOMER_ID": "60000153192326",
+            "CUSTOMER_TYPE": "Pharmacy",
+            "NAME": "Chemist Warehouse Ashby"
+        },
+        {
+            "CUSTOMER_ID": "60000153192334",
+            "CUSTOMER_TYPE": "Pharmacy",
+            "NAME": "Chemist Warehouse Belconnen Markets Ibbott Lane"
+        },
+        {
+            "CUSTOMER_ID": "60000153192330",
+            "CUSTOMER_TYPE": "Pharmacy",
+            "NAME": "Chemist Warehouse St Leonards Pacific Highway"
+        },
+        {
+            "CUSTOMER_ID": "60000153192358",
+            "CUSTOMER_TYPE": "Pharmacy",
+            "NAME": "Cate's Chemist TAIHS"
+        },
+        {
+            "CUSTOMER_ID": "22421667",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Mac-Field Medical Practice"
+        },
+        {
+            "CUSTOMER_ID": "60000095486184",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Magill Family Practice"
+        },
+        {
+            "CUSTOMER_ID": "17079452",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Myhealth Medical Kable Street"
+        },
+        {
+            "CUSTOMER_ID": "17140453",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Wells Medical Clinic"
+        },
+        {
+            "CUSTOMER_ID": "60000148603772",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "The Eye Health Centre Aspley"
+        },
+        {
+            "CUSTOMER_ID": "17102797",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Primary Old Port Road Medical & Dental Centre"
+        },
+        {
+            "CUSTOMER_ID": "60000148400780",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "GastroNorth"
+        },
+        {
+            "CUSTOMER_ID": "17087553",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Gastro North"
+        },
+        {
+            "CUSTOMER_ID": "17078852",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Royale Medical Centre"
+        },
+        {
+            "CUSTOMER_ID": "17078813",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Keilor Medical Clinic"
+        },
+        {
+            "CUSTOMER_ID": "17078723",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Europa Medical Centre"
+        },
+        {
+            "CUSTOMER_ID": "17078953",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Southern Cross Medical Centre"
+        },
+        {
+            "CUSTOMER_ID": "17252212",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Dept of Gastroenterology"
+        },
+        {
+            "CUSTOMER_ID": "17083221",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Sydney Gastrointestinal Specialists"
+        },
+        {
+            "CUSTOMER_ID": "17084545",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "True Relationships & Reproductive Health - Windsor"
+        },
+        {
+            "CUSTOMER_ID": "17162603",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "The Eye Health Centre Brisbane"
+        },
+        {
+            "CUSTOMER_ID": "17137189",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "East Adelaide Healthcare"
+        },
+        {
+            "CUSTOMER_ID": "17078938",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Clare Medical Centre"
+        },
+        {
+            "CUSTOMER_ID": "17118429",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Gold Coast Womens Health"
+        },
+        {
+            "CUSTOMER_ID": "17088665",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Snowtown Surgery"
+        },
+        {
+            "CUSTOMER_ID": "17087413",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Bulgarr Ngaru Medical Aboriginal Corporation"
+        },
+        {
+            "CUSTOMER_ID": "60000148603768",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "The Eye Health Centre Wynnum"
+        },
+        {
+            "CUSTOMER_ID": "17189599",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Marie Stopes International"
+        },
+        {
+            "CUSTOMER_ID": "17078969",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Forbes Medical Centre"
+        },
+        {
+            "CUSTOMER_ID": "17213894",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Northern Gastroenterology"
+        },
+        {
+            "CUSTOMER_ID": "60000044281961",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Minto Mediclinic"
+        },
+        {
+            "CUSTOMER_ID": "60000144992854",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Advance Healthcare Dandenong"
+        },
+        {
+            "CUSTOMER_ID": "60000084230710",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Iris Education"
+        },
+        {
+            "CUSTOMER_ID": "17159197",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Richmond Marketplace Medical Centre"
+        },
+        {
+            "CUSTOMER_ID": "17079468",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Narre Warren Medical Centre"
+        },
+        {
+            "CUSTOMER_ID": "60000148603764",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "The Eye Health Centre Ipswich"
+        },
+        {
+            "CUSTOMER_ID": "17155609",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Dr Marie Stopes International"
+        },
+        {
+            "CUSTOMER_ID": "17109633",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Victorian Gut Centre"
+        },
+        {
+            "CUSTOMER_ID": "17103105",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Bondi Medical Centre"
+        },
+        {
+            "CUSTOMER_ID": "17078708",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Minto Mall Medical Centre"
+        },
+        {
+            "CUSTOMER_ID": "17078837",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Appletree Family Practice"
+        },
+        {
+            "CUSTOMER_ID": "17083013",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "True Relationships & Reproductive Health - Ipswich"
+        },
+        {
+            "CUSTOMER_ID": "17079459",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Ovens Medical Group"
+        },
+        {
+            "CUSTOMER_ID": "60000104662669",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Sharpe Cardiology and Endovascular"
+        },
+        {
+            "CUSTOMER_ID": "17078752",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Mermaid Central Medical Clinic"
+        },
+        {
+            "CUSTOMER_ID": "17085953",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Cardiac Dynamic"
+        },
+        {
+            "CUSTOMER_ID": "17079001",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "East Adelaide Healthcare"
+        },
+        {
+            "CUSTOMER_ID": "17078555",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Griffith University"
+        },
+        {
+            "CUSTOMER_ID": "17137561",
+            "CUSTOMER_TYPE": "Practice",
+            "NAME": "Alstonville Clinic"
+        }
+    ],
+    "Order": [
+        {
+            "CUSTOMER_ID": "17484794",
+            "ORDER_ID": "1000",
+            "DELIVERY_ADDRESS": "North Shore Private Hospital,\r\nDept of Gastroenterology & Hepatology\r\n3 Westbourne Street, \r\nST LEONARDS,\r\nNSW,\r\n2065",
+            "DELIVERY_STATUS": "PENDING",
+            "PRODUCT_ID": "100",
+            "PRODUCT_NAME": "Pfizer-BioNTech Ointment 5g",
+            "PHYSICAL_QUANTITY": "5"
+        },
+        {
+            "CUSTOMER_ID": "17484794",
+            "ORDER_ID": "1001",
+            "DELIVERY_ADDRESS": "North Shore Private Hospital,\r\nDept of Gastroenterology & Hepatology\r\n3 Westbourne Street, \r\nST LEONARDS,\r\nNSW,\r\n2065",
+            "DELIVERY_STATUS": "PENDING",
+            "PRODUCT_ID": "200",
+            "PRODUCT_NAME": "Moderna 400ug x 10",
+            "PHYSICAL_QUANTITY": "6"
+        },
+        {
+            "CUSTOMER_ID": "17484794",
+            "ORDER_ID": "1002",
+            "DELIVERY_ADDRESS": "North Shore Private Hospital,\r\nDept of Gastroenterology & Hepatology\r\n3 Westbourne Street, \r\nST LEONARDS,\r\nNSW,\r\n2065",
+            "DELIVERY_STATUS": "PENDING",
+            "PRODUCT_ID": "300",
+            "PRODUCT_NAME": "Janssen 100 mg x 10",
+            "PHYSICAL_QUANTITY": "7"
+        },
+        {
+            "CUSTOMER_ID": "17498390",
+            "ORDER_ID": "1003",
+            "DELIVERY_ADDRESS": "Narre Warren Medical Centre\r\nShop 2,3 Malcolm Court,\t\r\nNARRE WARREN,\t\r\nVIC,\r\n3805",
+            "DELIVERY_STATUS": "PENDING",
+            "PRODUCT_ID": "400",
+            "PRODUCT_NAME": "Sputnik 100 mg x 10",
+            "PHYSICAL_QUANTITY": "2"
+        },
+        {
+            "CUSTOMER_ID": "17498390",
+            "ORDER_ID": "1004",
+            "DELIVERY_ADDRESS": "Narre Warren Medical Centre\r\nShop 2,3 Malcolm Court,\t\r\nNARRE WARREN,\t\r\nVIC,\r\n3805",
+            "DELIVERY_STATUS": "PENDING",
+            "PRODUCT_ID": "500",
+            "PRODUCT_NAME": "Oxford-AstraZeneca 200 mg x 5",
+            "PHYSICAL_QUANTITY": "4"
+        }
+    ]
+}
