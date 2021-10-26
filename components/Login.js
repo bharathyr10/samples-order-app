@@ -25,7 +25,7 @@ const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
 
   const showMessage = () => {
-    Alert.alert("Email enterted is ", email);
+    //Alert.alert("Email enterted is ", email);
     const loginData = data.Login;
 
     for (var i = 0; i < loginData.length; i++) {
@@ -112,7 +112,7 @@ const LoginScreen = ({ navigation }) => {
                 Remember Me
               </Checkbox>
             </View>
-            <View style={{ flex: 1, marginRight: 0 }}>
+            {/* <View style={{ flex: 1, marginRight: 0 }}>
               <Text
                 style={{
                   fontSize: 15,
@@ -122,7 +122,7 @@ const LoginScreen = ({ navigation }) => {
               >
                 Forgot Password
               </Text>
-            </View>
+            </View> */}
           </View>
           <View
             style={{

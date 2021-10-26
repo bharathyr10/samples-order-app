@@ -21,6 +21,8 @@ import {
   NativeBaseProvider,
 } from "native-base";
 import Customers from "./data/data.json";
+import { useDispatch, useSelector } from "react-redux";
+import { customerSelected } from "./orderSlice";
 
 const filterItems = (data, field, value) => {
   if (field != null) {
@@ -36,13 +38,28 @@ const data = filterItems(Customers.Customer, "ADDRESS_TYPE", "PHYSICAL").map(
 //console.log(filterItems(data, "ADDRESS_TYPE", "PHYSICAL"));
 
 const CustomerSelection = ({ navigation }) => {
+  const customerID = useSelector((state) => state.order);
   const [customers, setCustomers] = React.useState(data);
+  const dispatch = useDispatch();
   const handleChange = (event) => {
     setCustomers(
       data.filter((x) =>
         x.NAME.toLowerCase().includes(event.target.value.toLowerCase())
       )
     );
+  };
+  //console.log("Customer ID B:", customerID);
+  const onCustomerSelect = (customerID, custName) => {
+    dispatch(
+      customerSelected({
+        custId: customerID,
+        custName: custName,
+      })
+    );
+    //console.log("Customer ID A:", customerID);
+    navigation.push("DeliverOptions", {
+      params: { Customer_ID: customerID },
+    });
   };
   return (
     <NativeBaseProvider>
@@ -59,12 +76,18 @@ const CustomerSelection = ({ navigation }) => {
       >
         <HStack
           space="4"
-          alignItems="center"
+          //alignItems="center"
           style={{
             alignSelf: "center",
           }}
         >
-          <Text color="white" fontSize="16">
+          <FontAwesome5
+            name="angle-left"
+            size={27}
+            color="white"
+            onClick={() => navigation.push("Welcome")}
+          />
+          <Text style={{ color: "white", fontSize: 16, textAlign: "center" }}>
             Choose A Customer
           </Text>
         </HStack>
@@ -105,9 +128,7 @@ const CustomerSelection = ({ navigation }) => {
             renderItem={({ item }) => (
               <Box
                 onClick={() =>
-                  navigation.push("Login", {
-                    params: { Customer_ID: item.CUSTOMER_ID },
-                  })
+                  onCustomerSelect(item.CUSTOMER_ID, item.FIRST_NAME)
                 }
                 borderBottomWidth="1"
                 _dark={{

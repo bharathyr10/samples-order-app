@@ -17,11 +17,14 @@ import {
   NativeBaseProvider,
   Checkbox,
   Button,
+  Box,
+  HStack,
+  VStack,
 } from "native-base";
+import TypeWriter from "react-native-typewriter";
 
 const WelcomeScreen = ({ navigation, route }) => {
   const startOrder = () => {
-    Alert.alert("Initiating the order");
     navigation.navigate("CustomerSelection");
   };
   return (
@@ -39,8 +42,10 @@ const WelcomeScreen = ({ navigation, route }) => {
         </View>
         <View style={styles.welcomeView}>
           <View style={{ padding: 20 }}>
-            <Text style={{ color: "black", fontSize: 25, textAlign: "center" }}>
+            <Text style={{ color: "white", fontSize: 25, textAlign: "center" }}>
+              {/* <TypeWriter typing={1} minDelay={50}> */}
               Welcome {route.params.name}
+              {/*  </TypeWriter> */}
             </Text>
 
             <View
@@ -56,7 +61,15 @@ const WelcomeScreen = ({ navigation, route }) => {
                   style={styles.loginButton}
                   onPress={startOrder}
                 >
-                  Start Order
+                  <Text
+                    style={{
+                      color: "#6d07f2",
+                      fontSize: 20,
+                      textAlign: "center",
+                    }}
+                  >
+                    Start Order
+                  </Text>
                 </Button>
               </Center>
             </View>
@@ -90,12 +103,13 @@ const styles = StyleSheet.create({
   },
   welcomeView: {
     flex: 0.4,
-    backgroundColor: "white",
+    //backgroundColor: "white",
+    color: "white",
     bottom: 200,
-    borderTopStartRadius: 30,
-    borderTopEndRadius: 30,
-    borderBottomStartRadius: 30,
-    borderBottomEndRadius: 30,
+    //borderTopStartRadius: 30,
+    //borderTopEndRadius: 30,
+    //borderBottomStartRadius: 30,
+    //borderBottomEndRadius: 30,
   },
   bottomView: {
     flex: 0.4,
@@ -115,7 +129,8 @@ const styles = StyleSheet.create({
   },
   loginButton: {
     alignSelf: "center",
-    backgroundColor: "#6d07f2",
+    backgroundColor: "white",
+    color: "#6d07f2",
     width: Dimensions.get("window").width / 2,
     justifyContent: "center",
     fontSize: 20,

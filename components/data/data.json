@@ -761,7 +761,8 @@
       "DELIVERY_STATUS": "PENDING",
       "PRODUCT_ID": "100",
       "PRODUCT_NAME": "Pfizer-BioNTech Ointment 5g",
-      "PHYSICAL_QUANTITY": "5"
+      "PHYSICAL_QUANTITY": "5",
+      "ORDER_DATE": "21-Jul-20"
     },
     {
       "CUSTOMER_ID": "17484794",
@@ -770,7 +771,8 @@
       "DELIVERY_STATUS": "PENDING",
       "PRODUCT_ID": "200",
       "PRODUCT_NAME": "Moderna 400ug x 10",
-      "PHYSICAL_QUANTITY": "6"
+      "PHYSICAL_QUANTITY": "6",
+      "ORDER_DATE": "19-Jul-20"
     },
     {
       "CUSTOMER_ID": "17484794",
@@ -779,7 +781,8 @@
       "DELIVERY_STATUS": "PENDING",
       "PRODUCT_ID": "300",
       "PRODUCT_NAME": "Janssen 100 mg x 10",
-      "PHYSICAL_QUANTITY": "7"
+      "PHYSICAL_QUANTITY": "7",
+      "ORDER_DATE": "20-Jul-20"
     },
     {
       "CUSTOMER_ID": "17498390",
@@ -788,7 +791,8 @@
       "DELIVERY_STATUS": "PENDING",
       "PRODUCT_ID": "400",
       "PRODUCT_NAME": "Sputnik 100 mg x 10",
-      "PHYSICAL_QUANTITY": "2"
+      "PHYSICAL_QUANTITY": "2",
+      "ORDER_DATE": "18-Jul-20"
     },
     {
       "CUSTOMER_ID": "17498390",
@@ -797,7 +801,8 @@
       "DELIVERY_STATUS": "PENDING",
       "PRODUCT_ID": "500",
       "PRODUCT_NAME": "Oxford-AstraZeneca 200 mg x 5",
-      "PHYSICAL_QUANTITY": "4"
+      "PHYSICAL_QUANTITY": "4",
+      "ORDER_DATE": "17-Jul-20"
     }
   ]
 }
