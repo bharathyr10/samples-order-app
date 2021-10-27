@@ -31,14 +31,16 @@ const filterItems = (data, field, value) => {
     });
   }
 };
-const data = filterItems(Customers.Customer, "ADDRESS_TYPE", "PHYSICAL").map(
-  (c) => ({ ...c, key: Math.random() })
-);
+const data = filterItems(Customers.Customer, "PRIMARY_ADDRESS",
+
+  "Yes").map(
+    (c) => ({ ...c, key: Math.random() })
+  );
 
 //console.log(filterItems(data, "ADDRESS_TYPE", "PHYSICAL"));
 
 const CustomerSelection = ({ navigation }) => {
-  const customerID = useSelector((state) => state.order);
+  const userName = useSelector((state) => state.order.userName);
   const [customers, setCustomers] = React.useState(data);
   const dispatch = useDispatch();
   const handleChange = (event) => {
@@ -56,6 +58,7 @@ const CustomerSelection = ({ navigation }) => {
         custName: custName,
       })
     );
+
     //console.log("Customer ID A:", customerID);
     navigation.push("DeliverOptions", {
       params: { Customer_ID: customerID },
@@ -78,14 +81,15 @@ const CustomerSelection = ({ navigation }) => {
           space="4"
           //alignItems="center"
           style={{
-            alignSelf: "center",
+            alignSelf: "flex-start",
           }}
         >
           <FontAwesome5
             name="angle-left"
             size={27}
+            style={{ marginLeft: 20, marginRight: 65 }}
             color="white"
-            onClick={() => navigation.push("Welcome")}
+            onClick={() => navigation.navigate("Welcome", { name: userName })}
           />
           <Text style={{ color: "white", fontSize: 16, textAlign: "center" }}>
             Choose A Customer

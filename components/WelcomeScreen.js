@@ -33,12 +33,12 @@ const WelcomeScreen = ({ navigation, route }) => {
       showsVerticalScrollIndicator={false}
     >
       <ImageBackground
-        source={require("../assets/images/background.jpg")}
+        source={require("../assets/images/apptheme.png")}
         style={{ height: Dimensions.get("window").height }}
       >
         <View style={styles.brandView}>
           <FontAwesome5 name="clinic-medical" size={44} color="white" />
-          <Text style={styles.brandViewText}>Samples App</Text>
+          <Text style={styles.brandViewText}>Sample Order</Text>
         </View>
         <View style={styles.welcomeView}>
           <View style={{ padding: 20 }}>
@@ -63,7 +63,7 @@ const WelcomeScreen = ({ navigation, route }) => {
                 >
                   <Text
                     style={{
-                      color: "#6d07f2",
+                      color: "#03a3e1",
                       fontSize: 20,
                       textAlign: "center",
                     }}
@@ -76,10 +76,10 @@ const WelcomeScreen = ({ navigation, route }) => {
           </View>
         </View>
         <View style={styles.bottomView}>
-          <Text style={styles.bottomText}>Corporate Centre, Building D,</Text>
-          <Text style={styles.bottomText}>12-24 Talavera Road,</Text>
-          <Text style={styles.bottomText}>Macquarie Park, NSW 2113</Text>
-          <Text style={styles.bottomText}>Visit us: www.samplesapp.com</Text>
+          <Text style={styles.bottomText}>Omega, Embassy TechSquare,</Text>
+          <Text style={styles.bottomText}>Kadubeesanahalli, Bengaluru,</Text>
+          <Text style={styles.bottomText}>Karnataka 560103</Text>
+          <Text style={styles.bottomText}>Visit us: www.sampleorder.com</Text>
         </View>
       </ImageBackground>
     </ScrollView>
@@ -118,9 +118,9 @@ const styles = StyleSheet.create({
   },
   bottomText: {
     padding: 5,
-    color: "white",
+    color: "#03a3e1",
     textAlign: "center",
-    fontSize: 17,
+    fontSize: 15,
   },
   forgotPassView: {
     height: 50,

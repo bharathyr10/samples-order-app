@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {
-  Text,
   ScrollView,
   ImageBackground,
   Dimensions,
@@ -13,46 +12,43 @@ import {
   Icon,
   Stack,
   Center,
+  Text,
   NativeBaseProvider,
   Button,
   Select,
+  Slide,
   Checkbox,
   VStack,
   Divider,
+  CheckIcon,
   Box,
   HStack,
   FlatList,
   Spacer,
 } from "native-base";
-import productlist from "./data/data.json";
-export const productslist = [
-  {
-    PRODUCT_ID: "100",
-    PRODUCT: "Pfizer-BioNTech Ointment 5g",
-  },
-  {
-    PRODUCT_ID: "200",
-    PRODUCT: "Moderna 400ug x 10",
-  },
-  {
-    PRODUCT_ID: "300",
-    PRODUCT: "Janssen 100 mg x 10",
-  },
-  {
-    PRODUCT_ID: "400",
-    PRODUCT: "Sputnik 100 mg x 10",
-  },
-  {
-    PRODUCT_ID: "500",
-    PRODUCT: "Oxford-AstraZeneca 200 mg x 5",
-  },
-];
+import samplesData from "./data/data.json";
+import { useDispatch, useSelector } from "react-redux";
+import { productsSelected } from "./orderSlice";
+const productslist = samplesData.Product;
 
 const Products = ({ navigation }) => {
+  const custName = useSelector((state) => state.order.custName);
+  const [isOpen, setIsOpen] = React.useState(false);
+  const dispatch = useDispatch();
   const [products, setproducts] = useState([]);
   console.log(products);
   const continueOrder = () => {
-    navigation.navigate("ReviewOrder");
+    if (products.length > 0) {
+      dispatch(
+        productsSelected({
+          products: products,
+        })
+      );
+      navigation.navigate("ReviewOrder");
+    } else {
+      setIsOpen(true);
+      console.log("Please select any product");
+    }
   };
   return (
     <NativeBaseProvider>
@@ -74,6 +70,15 @@ const Products = ({ navigation }) => {
             alignSelf: "center",
           }}
         >
+          <FontAwesome5
+            name="angle-left"
+            size={27}
+            color="white"
+            style={{
+              alignSelf: "start",
+            }}
+            onClick={() => navigation.push("DeliverOptions")}
+          />
           <Text style={{ color: "white", fontSize: 16 }}>Choose Products</Text>
         </HStack>
       </Box>
@@ -97,7 +102,7 @@ const Products = ({ navigation }) => {
             }}
           >
             <Text color="black" fontSize="16" padding="2px">
-              Select the products and quantities for Dr. Atson Wan's orders
+              Select the products and quantities for Dr. {custName}'s orders
             </Text>
           </HStack>
           <FlatList
@@ -123,18 +128,21 @@ const Products = ({ navigation }) => {
                   <View style={styles.rightsection}>
                     <Input
                       w={{
-                        base: "100%",
-                        md: "15%",
+                        base: "22%",
+                        md: "12%",
                       }}
                       style={{
                         borderColor: "#D4D4D4",
                         borderWidth: "2px",
+                        fontSize: "14px",
+                        padding: "5px",
                       }}
                       onChange={(e) =>
                         setproducts([
                           ...products,
                           {
                             PRODUCT_ID: item.PRODUCT_ID,
+                            PRODUCT_NAME: item.PRODUCT,
                             PHYSICAL_QUANTITY: e.target.value,
                           },
                         ])
@@ -145,7 +153,57 @@ const Products = ({ navigation }) => {
               </Box>
             )}
           />
-          <Button onPress={continueOrder}>Continue</Button>
+
+          <Box backgroundColor="white" pb="3">
+            <View
+              style={{
+                height: 100,
+                justifyContent: "left",
+                alignItems: "left",
+              }}
+            >
+              <Center flex={1}>
+                <Button onPress={continueOrder}>Continue</Button>
+              </Center>
+            </View>
+          </Box>
+          <Slide in={isOpen} placement="bottom">
+            <Box
+              w="100%"
+              position="absolute"
+              bottom="2"
+              p="2"
+              mx={-3}
+              borderRadius="xs"
+              bg="danger.100"
+              alignItems="center"
+              justifyContent="center"
+              _dark={{
+                bg: "danger.200",
+              }}
+            >
+              <HStack space={2}>
+                <CheckIcon
+                  size="4"
+                  color="danger.600"
+                  mt="1"
+                  _dark={{
+                    color: "danger.700",
+                  }}
+                />
+                <Text
+                  color="danger.600"
+                  textAlign="center"
+                  _dark={{
+                    color: "danger.700",
+                  }}
+                  fontWeight="medium"
+                >
+                  Please select atleast one product.
+                </Text>
+              </HStack>
+            </Box>
+          </Slide>
         </Box>
       </ScrollView>
     </NativeBaseProvider>
@@ -159,6 +217,6 @@ const styles = StyleSheet.create({
     width: "80%",
   },
   rightsection: {
-    width: "100%",
+    width: "80%",
   },
 });

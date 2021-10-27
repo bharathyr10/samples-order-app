@@ -34,18 +34,13 @@ import {
   Button,
 } from "native-base";
 import SamplesData from "./data/data.json";
+import { useDispatch, useSelector } from "react-redux";
+import { addressSelected } from "./orderSlice";
 
-const customer_id = "17484794";
 
-const customerFullData = SamplesData.Customer;
-const customerData = customerFullData.filter(function (item) {
-  return item.CUSTOMER_ID == customer_id;
-});
-// console.log("Dr. " + customerData[0].FIRST_NAME + " " + customerData[0].NAME);
-const customerName =
-  "Dr. " + customerData[0].FIRST_NAME + " " + customerData[0].NAME;
 
 export const OrderList = () => {
+  const customer_id = useSelector((state) => state.order.custId);;
   const orderFullData = SamplesData.Order;
   const orderData = orderFullData.filter(function (item) {
     return item.CUSTOMER_ID == customer_id;
@@ -91,7 +86,7 @@ export const OrderList = () => {
               <Spacer />
               <VStack space={1}>
                 <Text color="white" paddingLeft="30px">
-                  QTY
+                  Qty
                 </Text>
               </VStack>
               <Spacer />
@@ -172,16 +167,30 @@ export const OrderList = () => {
 };
 
 export const AddressSelect = () => {
+
+  const dispatch = useDispatch();
+
+  const customer_id = useSelector((state) => state.order.custId);
+
+  const customerFullData = SamplesData.Customer;
+  const customerData = customerFullData.filter(function (item) {
+    return item.CUSTOMER_ID == customer_id;
+  });
+
   const addressData = customerData.map(function (item) {
     return `${item.LINE_1_ADDRESS} ${item.CITY} ${item.STATE}`;
   });
 
-  let [service, setService] = React.useState(addressData[0]);
-  //setService(customerData[0])
+  let [address, setAddress] = React.useState(addressData[0]);
+  dispatch(
+    addressSelected({
+      address: addressData[0],
+    })
+  );
   return (
-    <VStack alignItems="center">
+    <VStack alignItems="flex-start" style={{ paddingLeft: 0 }}>
       <Select
-        selectedValue={service}
+        selectedValue={address}
         minWidth="280"
         accessibilityLabel="Choose Service"
         placeholder="Choose Address"
@@ -191,21 +200,40 @@ export const AddressSelect = () => {
         }}
         mt={1}
         style={{ color: "#03a3e1", fontSize: "16" }}
-        onValueChange={(itemValue) => setService(itemValue)}
+        onValueChange={(itemValue) => {
+          setAddress(itemValue);
+          dispatch(
+            addressSelected({
+              address: itemValue,
+            })
+          );
+        }}
       >
         {addressData ? (
           addressData.map((address) => (
             <Select.Item label={address} value={address} />
           ))
         ) : (
-          <div></div>
-        )}
+            <div></div>
+          )}
       </Select>
     </VStack>
   );
 };
 
 const DeliverOptionsScreen = ({ navigation }) => {
+
+  const customer_id = useSelector((state) => state.order.custId);;
+
+  const customerFullData = SamplesData.Customer;
+  const customerData = customerFullData.filter(function (item) {
+    return item.CUSTOMER_ID == customer_id;
+  });
+
+  const customerName =
+    "Dr. " + customerData[0].FIRST_NAME + " " + customerData[0].NAME;
+
+
   const continueOrder = () => {
     navigation.navigate("Products");
   };
@@ -263,7 +291,10 @@ const DeliverOptionsScreen = ({ navigation }) => {
               </Center>
             </FormControl>
             <FormControl>
-              <FormControl.Label mb="3">DELIVER TO</FormControl.Label>
+              {/* <FormControl.Label mb="3">DELIVER TO</FormControl.Label> */}
+              <Heading fontSize="18" pb="3">
+                DELIVER TO
+      </Heading>
               <Radio.Group nativeID="patani" name="day_night" value="1">
                 <VStack space="3">
                   <Radio value="1">Practice address as above</Radio>

@@ -25,6 +25,7 @@ import { FontAwesome5, MaterialIcons } from "@expo/vector-icons";
 import Signature from "react-native-signature-canvas";
 import { useDispatch, useSelector } from "react-redux";
 import { orderPlaced } from "./orderSlice";
+import { order } from "styled-system";
 const orderData = [
   {
     PRODUCT_ID: "100",
@@ -56,6 +57,48 @@ const ReviewOrder = ({ navigation, route }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [signature, setSign] = useState(null);
   const customerData = useSelector((state) => state.order);
+  const date = new Date();
+  const formattedDate = date
+    .toLocaleDateString("en-GB", {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    })
+    .replace(/ /g, "-");
+
+  let orderInfo = [];
+  for (let i = 0; i < customerData.products.length; i++) {
+    orderInfo.push({
+      id: i + Math.ceil(Math.random() * 1000),
+      CUSTOMER_ID: customerData.custId,
+      ORDER_ID: Math.ceil(Math.random() * 1000),
+      DELIVERY_ADDRESS: customerData.address,
+      DELIVERY_STATUS: "PENDING",
+      PRODUCT_ID: customerData.products[i].PRODUCT_ID,
+      PRODUCT_NAME: customerData.products[i].PRODUCT_NAME,
+      PHYSICAL_QUANTITY: customerData.products[i].PHYSICAL_QUANTITY,
+      ORDER_DATE: formattedDate,
+    });
+  }
+  //console.log(orderInfo);
+
+  const dispatch = useDispatch();
+  console.log(JSON.stringify(orderInfo));
+  const placeOrder = () => {
+    dispatch(
+      orderPlaced({
+        orderDetails: orderInfo,
+      })
+    );
+    fetch("http://localhost:8000/Order", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(orderInfo),
+    }).then(() => {
+      console.log("new order added");
+    });
+    navigation.push("final");
+  };
   const handleOK = (signature) => {
     console.log(signature);
     setSign(signature);
@@ -69,6 +112,7 @@ const ReviewOrder = ({ navigation, route }) => {
     background-color: red;
     color: #FFF;
   }`;
+
   return (
     <NativeBaseProvider>
       <Box
@@ -100,17 +144,17 @@ const ReviewOrder = ({ navigation, route }) => {
           </Text>
         </HStack>
       </Box>
-      <View>
-        <Text>
+      <View style={{ padding: 17 }}>
+        <Text color="black" fontSize="16" paddingBottom="10px">
           Dr. {customerData?.custName}, please review and authorise your sample
           order
         </Text>
-        <Text> DELIVERY ADDRESS:</Text>
-        <Text>25 Wallstreet, NSW 2065</Text>
+        <Text bold>DELIVERY ADDRESS:</Text>
+        <Text>{customerData?.address}</Text>
       </View>
 
       <FlatList
-        data={orderData}
+        data={customerData?.products}
         renderItem={({ item }) => (
           <Box
             borderBottomWidth="1"
@@ -123,8 +167,8 @@ const ReviewOrder = ({ navigation, route }) => {
             py="2"
           >
             <HStack alignItems="center" justifyContent="space-between">
-              <Text fontWeight="medium">{item.PRODUCT}</Text>
-              <Text color="blueGray.400">{item.QUANTITY}</Text>
+              <Text fontWeight="medium">{item.PRODUCT_NAME}</Text>
+              <Text color="blueGray.600">{item.PHYSICAL_QUANTITY}</Text>
             </HStack>
           </Box>
         )}
@@ -138,23 +182,24 @@ const ReviewOrder = ({ navigation, route }) => {
               style={{ width: 335, height: 114 }}
               source={{ uri: signature }}
             />
-          ) : null}
+          ) : (
+            <Signature
+              onOK={handleOK}
+              onEmpty={handleEmpty}
+              descriptionText="Sign"
+              clearText="Clear"
+              confirmText="Save"
+              webStyle={style}
+            />
+          )}
         </View>
-        <Signature
-          onOK={handleOK}
-          onEmpty={handleEmpty}
-          descriptionText="Sign"
-          clearText="Clear"
-          confirmText="Save"
-          webStyle={style}
-        />
       </View>
       <View>
-        <Button my="2" onPress={() => setIsOpen(!isOpen)}>
-          Place Order
-        </Button>
+        <Center flex={1}>
+          <Button onPress={placeOrder}>Place Order</Button>
+        </Center>
       </View>
-      <Slide in={isOpen} placement="bottom">
+      {/* <Slide in={isOpen} placement="bottom">
         <Box
           w="100%"
           position="absolute"
@@ -190,7 +235,7 @@ const ReviewOrder = ({ navigation, route }) => {
             </Text>
           </HStack>
         </Box>
-      </Slide>
+      </Slide> */}
     </NativeBaseProvider>
   );
 };

@@ -20,18 +20,26 @@ import {
 } from "native-base";
 import WelcomeScreen from "./WelcomeScreen";
 import * as data from "./data/data.json";
+import { useDispatch, useSelector } from "react-redux";
+import { userLoggedIn } from "./orderSlice";
 
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
-
+  const dispatch = useDispatch();
   const showMessage = () => {
     //Alert.alert("Email enterted is ", email);
     const loginData = data.Login;
 
     for (var i = 0; i < loginData.length; i++) {
-      if (email === loginData[i]?.email) {
-        console.log("Name:", loginData[i]?.name);
-        navigation.navigate("Welcome", { name: loginData[i]?.name });
+      if (email === loginData[i] ?.email) {
+        console.log("Name:", loginData[i] ?.name);
+        navigation.navigate("Welcome", { name: loginData[i] ?.name });
+        dispatch(
+          userLoggedIn({
+            userName: loginData[i] ?.name,
+
+          })
+        );
       } else {
         console.log("You are not authorized to login");
       }
@@ -43,25 +51,25 @@ const LoginScreen = ({ navigation }) => {
       showsVerticalScrollIndicator={false}
     >
       <ImageBackground
-        source={require("../assets/images/background.jpg")}
+        source={require("../assets/images/apptheme.png")}
         style={{ height: Dimensions.get("window").height / 2.5 }}
       >
         <View style={styles.brandView}>
           <FontAwesome5 name="clinic-medical" size={44} color="white" />
-          <Text style={styles.brandViewText}>Samples App</Text>
+          <Text style={styles.brandViewText}>Sample Order</Text>
         </View>
       </ImageBackground>
 
       <View style={styles.bottomView}>
         <View style={{ padding: 40 }}>
           <Text style={{ color: "black", fontSize: 34 }}>Welcome</Text>
-          <Text style={{ paddingTop: 10 }}>
+          {/* <Text style={{ paddingTop: 10 }}>
             Don't have an account ?
             <Text style={{ color: "red", fontStyle: "italic" }}>
               {" "}
               Register Now
             </Text>
-          </Text>
+          </Text> */}
           <View style={{ marginTop: 50 }}>
             <Center flex={1} px="5">
               <Stack space={4} w="100%" alignItems="center">
@@ -173,7 +181,7 @@ const styles = StyleSheet.create({
   },
   loginButton: {
     alignSelf: "center",
-    backgroundColor: "#6d07f2",
+    // backgroundColor: "#0891b2",
     width: Dimensions.get("window").width / 2,
     justifyContent: "center",
     fontSize: 20,

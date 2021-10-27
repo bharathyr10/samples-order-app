@@ -7,6 +7,7 @@ import WelcomeScreen from "./components/WelcomeScreen";
 import { NativeBaseProvider } from "native-base";
 import CustomerSelection from "./components/CustomerSelection";
 import DeliverOptionsScreen from "./components/DeliverOptions";
+import FinalScreen from "./components/FinalScreen";
 import Products from "./components/Products";
 import ReviewOrder from "./components/ReviewOrder";
 import { SignatureScreen } from "./components/test";
@@ -26,6 +27,7 @@ export default function App() {
             {/* <Stack.Screen name="Test" component={SignatureScreen} /> */}
             <Stack.Screen name="Login" component={LoginScreen} />
             <Stack.Screen name="Welcome" component={WelcomeScreen} />
+            <Stack.Screen name="final" component={FinalScreen} />
             <Stack.Screen
               name="CustomerSelection"
               component={CustomerSelection}
