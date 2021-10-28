@@ -80,7 +80,6 @@ const ReviewOrder = ({ navigation, route }) => {
       ORDER_DATE: formattedDate,
     });
   }
-  //console.log(orderInfo);
 
   const dispatch = useDispatch();
   console.log(JSON.stringify(orderInfo));
@@ -90,13 +89,15 @@ const ReviewOrder = ({ navigation, route }) => {
         orderDetails: orderInfo,
       })
     );
-    fetch("http://localhost:8000/Order", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(orderInfo),
-    }).then(() => {
-      console.log("new order added");
-    });
+    for (let i = 0; i < orderInfo.length; i++) {
+      fetch("http://localhost:8000/Order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(orderInfo[i]),
+      }).then(() => {
+        console.log("new order added");
+      });
+    }
     navigation.push("final");
   };
   const handleOK = (signature) => {
@@ -189,7 +190,7 @@ const ReviewOrder = ({ navigation, route }) => {
               descriptionText="Sign"
               clearText="Clear"
               confirmText="Save"
-              webStyle={style}
+              //webStyle={style}
             />
           )}
         </View>

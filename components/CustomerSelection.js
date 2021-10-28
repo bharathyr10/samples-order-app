@@ -31,11 +31,12 @@ const filterItems = (data, field, value) => {
     });
   }
 };
-const data = filterItems(Customers.Customer, "PRIMARY_ADDRESS",
+const data = filterItems(
+  Customers.Customer,
+  "PRIMARY_ADDRESS",
 
-  "Yes").map(
-    (c) => ({ ...c, key: Math.random() })
-  );
+  "Yes"
+).map((c) => ({ ...c, key: Math.random() }));
 
 //console.log(filterItems(data, "ADDRESS_TYPE", "PHYSICAL"));
 
@@ -73,8 +74,8 @@ const CustomerSelection = ({ navigation }) => {
         }}
         style={{
           backgroundColor: "#215E94",
-          paddingTop: "5px",
-          paddingBottom: "5px",
+          paddingTop: 5,
+          paddingBottom: 5,
         }}
       >
         <HStack
