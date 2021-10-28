@@ -5,6 +5,7 @@ import {
   Dimensions,
   View,
   StyleSheet,
+  SafeAreaView,
 } from "react-native";
 import { FontAwesome5, MaterialIcons } from "@expo/vector-icons";
 import {
@@ -45,11 +46,7 @@ const CustomerSelection = ({ navigation }) => {
   const [customers, setCustomers] = React.useState(data);
   const dispatch = useDispatch();
   const handleChange = (event) => {
-    setCustomers(
-      data.filter((x) =>
-        x.NAME.toLowerCase().includes(event.target.value.toLowerCase())
-      )
-    );
+    setCustomers(data.filter((x) => x.NAME.includes(event.target.value)));
   };
   //console.log("Customer ID B:", customerID);
   const onCustomerSelect = (customerID, custName) => {
@@ -98,9 +95,9 @@ const CustomerSelection = ({ navigation }) => {
         </HStack>
       </Box>
 
-      <ScrollView
+      <SafeAreaView
         style={{ flex: 1, backgroundColor: "#ffffff" }}
-        showsVerticalScrollIndicator={false}
+        //showsVerticalScrollIndicator={false}
       >
         <Box
           w={{
@@ -169,7 +166,7 @@ const CustomerSelection = ({ navigation }) => {
                 </HStack>
               </Box>
             )}
-            keyExtractor={(item) => item.key}
+            keyExtractor={(item) => item.key.toString()}
           />
         </Box>
         {/* <View>Choose A Customer</View>
@@ -227,7 +224,7 @@ const CustomerSelection = ({ navigation }) => {
           </header>
         </NativeBaseProvider>
       </View>*/}
-      </ScrollView>
+      </SafeAreaView>
     </NativeBaseProvider>
   );
 };

@@ -25,7 +25,7 @@ import { FontAwesome5, MaterialIcons } from "@expo/vector-icons";
 import Signature from "react-native-signature-canvas";
 import { useDispatch, useSelector } from "react-redux";
 import { orderPlaced } from "./orderSlice";
-import { order } from "styled-system";
+
 const orderData = [
   {
     PRODUCT_ID: "100",
@@ -55,7 +55,7 @@ const orderData = [
 ];
 const ReviewOrder = ({ navigation, route }) => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [signature, setSign] = useState(null);
+  const [signature, setSign] = useState("yes");
   const customerData = useSelector((state) => state.order);
   const date = new Date();
   const formattedDate = date
@@ -131,13 +131,14 @@ const ReviewOrder = ({ navigation, route }) => {
           space="4"
           //alignItems="center"
           style={{
-            alignSelf: "center",
+            alignSelf: "flex-start",
           }}
         >
           <FontAwesome5
             name="angle-left"
             size={27}
             color="white"
+            style={{ marginLeft: 20, marginRight: 65 }}
             onClick={() => navigation.push("Products")}
           />
           <Text style={{ color: "white", fontSize: 16, textAlign: "center" }}>
@@ -181,7 +182,7 @@ const ReviewOrder = ({ navigation, route }) => {
             <Image
               resizeMode={"contain"}
               style={{ width: 335, height: 114 }}
-              source={{ uri: signature }}
+              source={require("../assets/images/signature.jpg")}
             />
           ) : (
             <Signature
@@ -244,12 +245,14 @@ const ReviewOrder = ({ navigation, route }) => {
 export default ReviewOrder;
 const styles = StyleSheet.create({
   preview: {
-    width: 335,
+    width: 360,
     height: 114,
-    backgroundColor: "#F8F8F8",
+    backgroundColor: "white",
     justifyContent: "center",
     alignItems: "center",
     marginTop: 15,
+    //border: 1,
+    //borderColor: "#03a3e1",
   },
   previewText: {
     color: "#FFF",

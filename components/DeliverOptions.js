@@ -37,10 +37,8 @@ import SamplesData from "./data/data.json";
 import { useDispatch, useSelector } from "react-redux";
 import { addressSelected } from "./orderSlice";
 
-
-
 export const OrderList = () => {
-  const customer_id = useSelector((state) => state.order.custId);;
+  const customer_id = useSelector((state) => state.order.custId);
   const orderFullData = SamplesData.Order;
   const orderData = orderFullData.filter(function (item) {
     return item.CUSTOMER_ID == customer_id;
@@ -117,7 +115,7 @@ export const OrderList = () => {
                   }}
                   color="coolGray.800"
                 >
-                  {item.ORDER_DATE}
+                  {item.ORDER_DATE.replace("2021", "21")}
                 </Text>
               </VStack>
 
@@ -128,7 +126,7 @@ export const OrderList = () => {
                     color: "warmGray.200",
                   }}
                 >
-                  {item.PRODUCT_NAME.slice(0, 20) + "..."}
+                  {item.PRODUCT_NAME.slice(0, 15) + "..."}
                 </Text>
               </VStack>
 
@@ -167,7 +165,6 @@ export const OrderList = () => {
 };
 
 export const AddressSelect = () => {
-
   const dispatch = useDispatch();
 
   const customer_id = useSelector((state) => state.order.custId);
@@ -214,16 +211,15 @@ export const AddressSelect = () => {
             <Select.Item label={address} value={address} />
           ))
         ) : (
-            <div></div>
-          )}
+          <div></div>
+        )}
       </Select>
     </VStack>
   );
 };
 
 const DeliverOptionsScreen = ({ navigation }) => {
-
-  const customer_id = useSelector((state) => state.order.custId);;
+  const customer_id = useSelector((state) => state.order.custId);
 
   const customerFullData = SamplesData.Customer;
   const customerData = customerFullData.filter(function (item) {
@@ -232,7 +228,6 @@ const DeliverOptionsScreen = ({ navigation }) => {
 
   const customerName =
     "Dr. " + customerData[0].FIRST_NAME + " " + customerData[0].NAME;
-
 
   const continueOrder = () => {
     navigation.navigate("Products");
@@ -255,16 +250,14 @@ const DeliverOptionsScreen = ({ navigation }) => {
             space="4"
             alignItems="center"
             style={{
-              alignSelf: "center",
+              alignSelf: "flex-start",
             }}
           >
             <FontAwesome5
               name="angle-left"
               size={27}
               color="white"
-              style={{
-                alignSelf: "start",
-              }}
+              style={{ marginLeft: 20, marginRight: 65 }}
               onClick={() => navigation.push("CustomerSelection")}
             />
 
@@ -294,7 +287,7 @@ const DeliverOptionsScreen = ({ navigation }) => {
               {/* <FormControl.Label mb="3">DELIVER TO</FormControl.Label> */}
               <Heading fontSize="18" pb="3">
                 DELIVER TO
-      </Heading>
+              </Heading>
               <Radio.Group nativeID="patani" name="day_night" value="1">
                 <VStack space="3">
                   <Radio value="1">Practice address as above</Radio>

@@ -67,16 +67,14 @@ const Products = ({ navigation }) => {
           space="4"
           alignItems="center"
           style={{
-            alignSelf: "center",
+            alignSelf: "flex-start",
           }}
         >
           <FontAwesome5
             name="angle-left"
             size={27}
             color="white"
-            style={{
-              alignSelf: "start",
-            }}
+            style={{ marginLeft: 20, marginRight: 65 }}
             onClick={() => navigation.push("DeliverOptions")}
           />
           <Text style={{ color: "white", fontSize: 16 }}>Choose Products</Text>
